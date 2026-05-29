@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% block content%}
+    <h3> ce site represente mon djangooo !!!</h3>
+    <p> ceci est un framework django !!!!!</p>
+    <h6>Mon nom est : {{nom|upper}}</h6>
+    <h5>Mon prenom est {{prenom}}</h5>
+    <h5>Vous avez  {{age}} ans </h5>
+
+    <h4>vos couleurs</h4>
+  <p>
+    
+    {% for couleur in couleurs %}
+        <li>{{couleur}}</li>
+    {% empty %}
+    
+        <li>vous n'avez aucun couleur </li>
+
+    {%endfor%}
+    <h5>status de connexion</h5>
+    {%  if est_connecte %}
+      <p> vous etes  connecter </p>
+    {% else %}
+      <p>veuillez vous connecter</p>
+
+    {% endif %}
+  </p>
+{% endblock%}

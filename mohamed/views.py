@@ -3,12 +3,29 @@ from django.http import HttpResponse
 
 # Create your views here.
 def accueil(request):
-    return HttpResponse(" ne soyez pas amoureux de ma premiere realisation")
+    context = {
+        "nom":"mohamed",
+        "age":24,
+        "prenom": "amine",
+        "est_connecte":True,
+        "couleurs":["noir", "orange", "red","green", "fucha", "white", "black"]
+    }
+    return render(request, 'accueil.html', context)
 
 
 def contact(request):
-    return HttpResponse( "ceci est ma toute premiere realisation de ma  page contact")
+    context = {
+        "mon numero":5767686876,
+        "email":"doumbiamohamedaime.gmail.com",
+        "copyright":"gdgdhjdg"
+
+    }
+    return  render(request,'contact.html', context)
 
 def blog(request):
-    return HttpResponse (" vous aimez monnn blog......")
+    context = {
+        "papa":"pagne",
+        "maman":"robe"
+    }
+    return render(request, 'blog.html', context)
 
